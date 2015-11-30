@@ -17,8 +17,10 @@ import java.util.regex.Pattern;
  */
 public class DSLReader {
 
-    public DSLReader() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("input.dsl"));
+    String input;
+
+    public DSLReader(String inputFilePath) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(inputFilePath));
         try {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
@@ -29,22 +31,30 @@ public class DSLReader {
                 line = br.readLine();
             }
             String everything = sb.toString();
-            System.out.println(everything);
+            input = new String(everything);
+//            System.out.println("input = "+input);
+
         } finally {
             br.close();
         }
     }
 
-    public String readProperty(String input, String keyword) throws Exception {
-        String pattern = keyword + " \"(.*)\"";
+    public String readProperty(String keyword) throws Exception {
+        String pattern = keyword + " (?:\"(.*)\"|(\\d))";
         Pattern regex = Pattern.compile(pattern);
 
-        Matcher matcher = regex.matcher(pattern);
+//        System.out.println("input ="+input);
+//        System.out.println("pattern = "+pattern);
+        Matcher matcher = regex.matcher(input);
 
         if (matcher.find()) {
-            return matcher.group(0);
+            if (matcher.group(1) == null) {
+                return matcher.group(2);
+            } else {
+                return matcher.group(1);
+            }
         } else {
-            throw new Exception("Not complete argument exception");
+            throw new Exception("Not complete argument exception or syntax error");
         }
     }
 
