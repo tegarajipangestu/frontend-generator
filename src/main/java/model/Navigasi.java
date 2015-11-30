@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package frontendgenerator.model;
+package model;
 
 /**
  *
@@ -13,6 +13,15 @@ public class Navigasi {
     
     private String posisi;
     private int jumlahMenu;
+
+    public String getClassName() {
+        if ("fixed".equals(posisi)) 
+            return "navbar navbar-inverse navbar-fixed-top";
+        else
+            return "navbar navbar-inverse";            
+    }
+    
+    
 
     public String getPosisi() {
         return posisi;

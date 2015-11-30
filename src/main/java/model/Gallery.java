@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package frontendgenerator.model;
+package model;
 
 /**
  *
  * @author tegarnization
  */
-public class Section {
+public class Gallery {
     private String judul;
-    private int kolom;
+    private int jumlahBaris;
     private int posisi;
 
     public String getJudul() {
@@ -22,12 +22,12 @@ public class Section {
         this.judul = judul;
     }
 
-    public int getKolom() {
-        return kolom;
+    public int getJumlahBaris() {
+        return jumlahBaris;
     }
 
-    public void setKolom(int kolom) {
-        this.kolom = kolom;
+    public void setJumlahBaris(int jumlahBaris) {
+        this.jumlahBaris = jumlahBaris;
     }
 
     public int getPosisi() {
