@@ -8,12 +8,12 @@ GeneratorEngine.make {
     headerGambar "jancuk.jpg"
     sectionJudul "Judul section cuk"
     sectionKolom 4
-    sectionPosisi 2
+    sectionPosisi 3
     carouselJumlah 3
-    carouselPosisi 1
+    carouselPosisi 2
     footerNama "Perusahaan Jancuk"
     footerJumlahLink 3
     galleryJudul "Judul Galeri cuk"
     galleryJumlahBaris 3
-    galleryPosisi 3
+    galleryPosisi 1
 };

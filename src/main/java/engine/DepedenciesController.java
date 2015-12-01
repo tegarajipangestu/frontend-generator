@@ -5,6 +5,7 @@
  */
 package engine;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,7 +26,7 @@ public class DepedenciesController {
     }
 
     public void assetsDepedenciesResolving() {
-        File srcFolder = new File(System.getProperty("user.dir")+"/assets");
+        File srcFolder = new File(System.getProperty("user.dir") + "/assets");
         File destFolder = new File(System.getProperty("user.dir") + "/result");
 
         //make sure source exists
@@ -50,8 +51,8 @@ public class DepedenciesController {
     }
 
     public void indexHtmlCopy() throws FileNotFoundException, IOException {
-        String src = System.getProperty("user.dir")+"/index.html";
-        String dest = System.getProperty("user.dir")+"/result/index.html";
+        String src = System.getProperty("user.dir") + "/index.html";
+        String dest = System.getProperty("user.dir") + "/result/index.html";
         InputStream in = new FileInputStream(src);
         OutputStream out = new FileOutputStream(dest);
 
@@ -66,6 +67,9 @@ public class DepedenciesController {
         in.close();
         out.close();
         System.out.println("File copied from " + src + " to " + dest);
+
+        File htmlFile = new File(System.getProperty("user.dir") + "/result/index.html");
+        Desktop.getDesktop().browse(htmlFile.toURI());
     }
 
     public static void main(String[] args) {

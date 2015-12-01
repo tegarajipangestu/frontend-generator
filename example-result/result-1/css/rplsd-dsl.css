@@ -1,0 +1,158 @@
+/*!
+ * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* Home Page Carousel */
+
+section.carousel {
+    height: 50%;
+}
+
+section.carousel .item,
+section.carousel .item.active,
+section.carousel .carousel-inner {
+    height: 100%;
+}
+
+section.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* 404 Page Styles */
+
+.error-404 {
+    font-size: 100px;
+}
+
+/* Pricing Page Styles */
+
+.price {
+    display: block;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.price sup {
+    top: -20px;
+    left: 2px;
+    font-size: 20px;
+}
+
+.period {
+    display: block;
+    font-style: italic;
+}
+
+/* Footer Styles */
+
+footer {
+    margin: 50px 0;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}
+
+header{
+    min-height: 90%;
+}
+.full {
+  min-height: 92vh;
+}
+
+.full h1{
+    text-align: center;
+    margin-top: 20%;
+}
+
+.full img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.dummyheight{
+    min-height: 30vh;
+}
+
+#gallery .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+footer{
+    overflow: hidden;
+    border-top: 2px solid #666;
+    padding-top: 20px;
+}
+
+.link{
+    float: left;
+    width: 60%;
+}
+
+.link ul{
+    list-style: none;
+}
+
+.link ul li{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.link ul li img{
+    width: 100%;
+    height: 100%;
+}
+
+.company-name{
+    float: right;
+    width: 20%;
+    padding-top: 20px;
+}
