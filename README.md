@@ -33,4 +33,5 @@ GeneratorEngine.make {
 ```
 
 
-
+## Result
+![untitled gif](https://cloud.githubusercontent.com/assets/7077388/11491007/5d3ea192-9810-11e5-87de-763db60eaa77.gif)
