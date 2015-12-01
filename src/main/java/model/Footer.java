@@ -11,7 +11,7 @@ package model;
  */
 public class Footer {
     String nama;
-    String jumlahLink;
+    int jumlahLink;
 
     public String getNama() {
         return nama;
@@ -21,11 +21,11 @@ public class Footer {
         this.nama = nama;
     }
 
-    public String getJumlahLink() {
+    public int getJumlahLink() {
         return jumlahLink;
     }
 
-    public void setJumlahLink(String jumlahLink) {
+    public void setJumlahLink(int jumlahLink) {
         this.jumlahLink = jumlahLink;
     }
     

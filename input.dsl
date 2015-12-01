@@ -1,19 +1,19 @@
 GeneratorEngine.make {
-    metaTitle "Template Jancuk"
+    metaTitle "RPLSD Template"
     metaAuthor "Bagas"
-    metaDescription "Ini template cuk"
+    metaDescription "Lorem ipsum dolor sit amet"
     navigasiPosisi "fixed"
-    navigasiJumlahMenu 3
-    headerJudul "Judul Jancuk"
+    navigasiJumlahMenu 5
+    headerJudul "RPLSD Template"
     headerGambar "jancuk.jpg"
     sectionJudul "Judul section cuk"
-    sectionKolom 3
-    sectionPosisi 2
+    sectionKolom 4
+    sectionPosisi 3
     carouselJumlah 3
-    carouselPosisi 1
+    carouselPosisi 2
     footerNama "Perusahaan Jancuk"
     footerJumlahLink 3
     galleryJudul "Judul Galeri cuk"
     galleryJumlahBaris 3
-    galleryPosisi 3
+    galleryPosisi 1
 };

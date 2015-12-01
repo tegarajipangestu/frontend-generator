@@ -26,11 +26,11 @@ public class Carousel {
         return jumlah;
     }
 
-    public static int getPosisi() {
+    public int getPosisi() {
         return posisi;
     }
 
-    public static void setPosisi(int posisi) {
+    public void setPosisi(int posisi) {
         Carousel.posisi = posisi;
     }
 

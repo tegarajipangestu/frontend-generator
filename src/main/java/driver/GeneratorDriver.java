@@ -5,6 +5,7 @@
  */
 package driver;
 
+import engine.DepedenciesController;
 import engine.GeneratorEngine;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -20,7 +21,8 @@ public class GeneratorDriver {
              System.out.println("Working Directory = " +
               System.getProperty("user.dir"));
             GeneratorEngine generatorEngine = new GeneratorEngine("input.dsl");
-        } catch (IOException ex) {
+            DepedenciesController depedenciesController = new DepedenciesController();
+        } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
     }
