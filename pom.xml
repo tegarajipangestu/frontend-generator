@@ -26,7 +26,7 @@
           <configuration>
               <archive>
                   <manifest>
-                      <mainClass>engine.GeneratorEngine</mainClass>
+                      <mainClass>driver.GeneratorDriver</mainClass>
                   </manifest>
               </archive>
           </configuration>

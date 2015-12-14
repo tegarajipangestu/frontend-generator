@@ -89,7 +89,8 @@ public class GeneratorEngine {
             } else if ("headerJudul".equals(prop.name())) {
                 header.setJudul(output);
             } else if ("headerGambar".equals(prop.name())) {
-                header.setGambar(output);
+                Header.gambar = output;
+//                header.setGambar(output);
             } else if ("sectionJudul".equals(prop.name())) {
                 section.setJudul(output);
             } else if ("sectionKolom".equals(prop.name())) {
@@ -170,26 +171,39 @@ public class GeneratorEngine {
     }
 
     public String urutan() throws Exception {
-        if (section.getPosisi() == 1 && gallery.getPosisi() == 2 && carousel.getPosisi() == 3) {
-            return constructGallery() + constructSection() + constructCarousel();
-        } else if (section.getPosisi() == 2 && gallery.getPosisi() == 1 && carousel.getPosisi() == 3) {
-            return constructGallery() + constructSection() + constructCarousel();
-        } else if (section.getPosisi() == 3 && gallery.getPosisi() == 2 && carousel.getPosisi() == 1) {
-            return constructCarousel() + constructGallery() + constructSection();
-        } else if (section.getPosisi() == 2 && gallery.getPosisi() == 3 && carousel.getPosisi() == 1) {
-            return constructCarousel() + constructSection() + constructGallery();
-        } else if (section.getPosisi() == 3 && gallery.getPosisi() == 1 && carousel.getPosisi() == 2) {
-            return constructGallery() + constructCarousel() + constructSection();
-        } else if (section.getPosisi() == 1 && gallery.getPosisi() == 3 && carousel.getPosisi() == 2) {
-            return constructSection() + constructCarousel() + constructGallery();
-        } else {
-            throw new Exception("Posisi error");
-        }
+        String body = "";
+		
+		for (int i=1 ; i<=3 ; i++) {
+			if (i == section.getPosisi()) {
+				body += constructSection();
+			} else if (i == gallery.getPosisi()) {
+				body += constructGallery();
+			} else if (i == carousel.getPosisi()) {
+				body += constructCarousel();
+			}
+		}
+		return body;
+                
+//        if (section.getPosisi() == 1 && gallery.getPosisi() == 2 && carousel.getPosisi() == 3) {
+//            return constructGallery() + constructSection() + constructCarousel();
+//        } else if (section.getPosisi() == 2 && gallery.getPosisi() == 1 && carousel.getPosisi() == 3) {
+//            return constructGallery() + constructSection() + constructCarousel();
+//        } else if (section.getPosisi() == 3 && gallery.getPosisi() == 2 && carousel.getPosisi() == 1) {
+//            return constructCarousel() + constructGallery() + constructSection();
+//        } else if (section.getPosisi() == 2 && gallery.getPosisi() == 3 && carousel.getPosisi() == 1) {
+//            return constructCarousel() + constructSection() + constructGallery();
+//        } else if (section.getPosisi() == 3 && gallery.getPosisi() == 1 && carousel.getPosisi() == 2) {
+//            return constructGallery() + constructCarousel() + constructSection();
+//        } else if (section.getPosisi() == 1 && gallery.getPosisi() == 3 && carousel.getPosisi() == 2) {
+//            return constructSection() + constructCarousel() + constructGallery();
+//        } else {
+//            throw new Exception("Posisi error");
+//        }
 
     }
 
     public String constructBody() throws Exception {
-        return constructNavigasi() +  urutan() + constructFooter() + constructScript();
+        return constructNavigasi() + constructHeader() + urutan() + constructFooter() + constructScript();
     }
 
     public String constructFooterLink() {
@@ -221,6 +235,19 @@ public class GeneratorEngine {
                 + "        </div>\n"
                 + "    </div>\n"
                 + "</footer>";
+        return output;
+    }
+
+    public String constructHeader() {
+        String output = "	<header class=\"container\">\n"
+                + "      <div class=\"row\">\n"
+                + "          <div class=\"full col-md-12\" style=\"width:100%\">\n"
+                + "              <h1>"+header.getJudul()+"</h1>\n"
+                + "              <img src=\""+header.getGambar()+"\">\n"
+                + "          </div>\n"
+                + "      </div>\n"
+                + "      <!-- /.row -->\n"
+                + "  </header>";
         return output;
     }
 
@@ -280,6 +307,7 @@ public class GeneratorEngine {
 
     public String constructSection() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("<h2>" + section.getJudul() + "</h2>");
         for (int i = 0; i < section.getKolom(); i++) {
             stringBuilder.append("			<div class=\"col-md-" + (12 / section.getKolom()) + "\">\n"
                     + "				<div class=\"dummyheight\">\n"

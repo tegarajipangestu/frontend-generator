@@ -12,15 +12,6 @@ package model;
 public class Carousel {
     private static int jumlah;
     private static int posisi;
-    private static String className;
-
-    public static String getClassName() {
-        return className;
-    }
-
-    public static void setClassName(String className) {
-        Carousel.className = className;
-    }
 
     public int getJumlah() {
         return jumlah;

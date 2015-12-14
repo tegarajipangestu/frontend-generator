@@ -11,7 +11,7 @@ package model;
  */
 public class Header {
     private String judul;
-    private String gambar;
+    public static String gambar;
 
     public String getJudul() {
         return judul;

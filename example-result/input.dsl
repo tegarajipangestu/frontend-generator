@@ -3,17 +3,17 @@ GeneratorEngine.make {
     metaAuthor "Jo"
     metaDescription "Lorem ipsum dolor sit amet"
     navigasiPosisi "fixed"
-    navigasiJumlahMenu 5
+    navigasiJumlahMenu 3
     headerJudul "Frontend Template"
     headerGambar "image.jpg"
     sectionJudul "Judul section"
-    sectionKolom 4
-    sectionPosisi 3
+    sectionKolom 2
+    sectionPosisi 1
     carouselJumlah 5
-    carouselPosisi 1
+    carouselPosisi 2
     footerNama "ITB"
     footerJumlahLink 3
     galleryJudul "Judul Galeri"
-    galleryJumlahBaris 3
-    galleryPosisi 2
+    galleryJumlahBaris 1
+    galleryPosisi 3
 };
